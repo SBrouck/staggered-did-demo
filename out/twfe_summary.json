@@ -1,0 +1,8 @@
+{
+  "coef_treated": -0.010499999999999544,
+  "se_treated": 0.01854548746003207,
+  "pvalue_treated": 0.5712745063486608,
+  "n_obs": 1920,
+  "n_units": 80,
+  "n_periods": 24
+}

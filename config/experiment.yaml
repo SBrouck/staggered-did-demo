@@ -1,0 +1,16 @@
+seed: 20250920
+n_units: 80
+n_periods: 24
+cohorts:
+  - {size: 20, adopt_month: 10}
+  - {size: 20, adopt_month: 12}
+  - {size: 20, adopt_month: 14}
+  - {size: 20, adopt_month: 16}
+base_intercept: -3.5            # sets base outcome near 3 to 4 percent
+effect_pp: 0.009                # ~0.9 percentage point average post effect
+effect_ramp_months: 6           # effect ramps in first 6 months after adoption
+sigma_alpha: 0.5                # variance of unit effects
+sigma_slope: 0.02               # variance of unit slopes
+season_amp: 0.3                 # sine seasonality amplitude
+noise_sd: 0.8
+output_panel_csv: "out/panel.csv"

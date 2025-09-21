@@ -1,0 +1,16 @@
+name: stats
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - matplotlib
+  - statsmodels
+  - pyyaml
+  - r-base=4.3
+  - r-dplyr
+  - r-readr
+  - r-broom
+  - r-jsonlite
