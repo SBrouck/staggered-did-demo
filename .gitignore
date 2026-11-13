@@ -1,7 +1,9 @@
-.Rhistory
-.Rproj.user
-.renv
-.venv
 __pycache__/
-out/*.rds
-out/*.RData
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.Rhistory
+.Rproj.user/
+results/panel.csv
+.DS_Store

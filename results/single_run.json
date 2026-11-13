@@ -1,0 +1,28 @@
+{
+  "n_units": 100,
+  "n_periods": 24,
+  "n_obs": 2400,
+  "baseline_rate": 0.03125,
+  "truth": {
+    "att_post_window": 0.006500000000000001,
+    "att_treated_cells": 0.007125
+  },
+  "estimates": {
+    "twfe_static": {
+      "estimate": -0.001987447698744773,
+      "se": 0.01612817900148154
+    },
+    "twfe_event_study_post": {
+      "estimate": -0.0035626534666006026
+    },
+    "cs_post": {
+      "estimate": -0.023611111111111114,
+      "se": 0.027173164852935708
+    }
+  },
+  "noise_free": {
+    "twfe_static": 0.004749435032244811,
+    "twfe_event_study_post": 0.005944036961735826,
+    "cs_post": 0.006142668187525051
+  }
+}

@@ -1,16 +1,21 @@
+# Data-generating process for the simulated staggered rollout.
 seed: 20250920
-n_units: 80
 n_periods: 24
-cohorts:
+cohorts:                        # adopt_month: null means never treated
   - {size: 20, adopt_month: 10}
   - {size: 20, adopt_month: 12}
   - {size: 20, adopt_month: 14}
   - {size: 20, adopt_month: 16}
-base_intercept: -3.5            # sets base outcome near 3 to 4 percent
-effect_pp: 0.009                # ~0.9 percentage point average post effect
-effect_ramp_months: 6           # effect ramps in first 6 months after adoption
-sigma_alpha: 0.5                # variance of unit effects
-sigma_slope: 0.02               # variance of unit slopes
-season_amp: 0.3                 # sine seasonality amplitude
-noise_sd: 0.8
-output_panel_csv: "out/panel.csv"
+  - {size: 20, adopt_month: null}
+base_intercept: -3.5            # logit of the baseline rate, about 3%
+effect_pp: 0.009                # long-run effect on the event probability (0.9 points)
+effect_ramp_months: 6           # effect grows linearly over the first 6 months
+sigma_alpha: 0.5                # sd of unit intercepts (logit scale)
+sigma_slope: 0.02               # sd of unit linear trends (logit scale)
+season_amp: 0.3                 # amplitude of a 12-month sine seasonality (logit scale)
+
+# Estimation and evaluation
+event_window: [-6, 8]           # event times reported; endpoints are binned in the TWFE event study
+post_window: [0, 8]             # event times averaged into the post-period ATT
+n_boot: 999                     # unit-level bootstrap replications (single run)
+n_mc: 2000                      # Monte Carlo replications
